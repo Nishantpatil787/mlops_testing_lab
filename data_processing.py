@@ -11,7 +11,13 @@ def load_data():
  
 def fill_missing_values(df):
     """Replace missing values of every column with the mean of that column."""
-    return df.fillna(0)
+    return df.fillna(df.mean(numeric_only=True))
+
+
+
+
+
+
  
 def remove_duplicates(df):
     """Remove repeated rows and reset the row numbers."""
